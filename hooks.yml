@@ -1,0 +1,23 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+
+functions:
+  javascript-hook:
+    lang: Dockerfile
+    handler: ./node
+    image: rorpage/node-hook-function
+    environment:
+      runtime: node
+  python-hook:
+    lang: Dockerfile
+    handler: ./python
+    image: rorpage/python-hook-function
+    environment:
+      runtime: python
+  ruby-hook:
+    lang: Dockerfile
+    handler: ./ruby
+    image: rorpage/ruby-hook-function
+    environment:
+      runtime: ruby
